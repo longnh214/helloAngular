@@ -1,0 +1,10 @@
+<ul>
+    <!-- 클릭이 되었을 때에 OnSelect 메소드를 호출 -->
+    <li *ngFor="let cust of customers"
+      [class.selected]="cust === selectedCustomer" (click)="onSelect(cust)">
+        <h4>{{cust.id}} - {{cust.firstName}} {{cust.lastName}}</h4> 
+    </li>
+  </ul>
+  
+  <!--자식 component에서 부모 Component로 데이터를 보낸다.-->
+  <app-customer-details [customer]="selectedCustomer"> </app-customer-details>
